@@ -1,1 +1,1 @@
-daily checin and checkout for lyros employees
+daily checking and checkout for lyros employees:
