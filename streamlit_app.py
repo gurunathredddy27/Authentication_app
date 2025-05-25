@@ -10,7 +10,9 @@ SUPABASE_URL = os.getenv('SUPABASE_URL')
 SUPABASE_KEY = os.getenv('SUPABASE_KEY')
 
 if SUPABASE_URL and SUPABASE_KEY:
-    client = create_client(SUPABASE_URL, SUPABASE_KEY, http_client=None)
+    # client = create_client(SUPABASE_URL, SUPABASE_KEY, http_client=None)
+    client = create_client(SUPABASE_URL, SUPABASE_KEY)
+
 else:
     st.error("Supabase credentials not found in .env file")
     st.stop()
