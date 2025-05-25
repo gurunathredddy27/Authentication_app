@@ -12,7 +12,6 @@ SUPABASE_KEY = os.getenv('SUPABASE_KEY')
 if SUPABASE_URL and SUPABASE_KEY:
     # client = create_client(SUPABASE_URL, SUPABASE_KEY, http_client=None)
     client = create_client(SUPABASE_URL, SUPABASE_KEY)
-
 else:
     st.error("Supabase credentials not found in .env file")
     st.stop()
@@ -65,7 +64,7 @@ else:
                 except Exception as e:
                     st.error(str(e))
 
-    # Password reset
+    # Password reset option
     if st.button("Forgot Password?"):
         col1, col2, col3 = st.columns([1, 4, 1])
         with col2:
