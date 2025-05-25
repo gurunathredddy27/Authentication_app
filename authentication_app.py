@@ -13,14 +13,14 @@ def sign_up(email, password):
         user = supabase.auth.sign_up({"email": email, "password": password})
         return user
     except Exception as e:
-        st.error(f"Registration failed: {e}")
+        st.error(f"Registration failed❌: {e}")
 
 def sign_in(email, password):
     try:
         user = supabase.auth.sign_in_with_password({"email": email, "password": password})
         return user
     except Exception as e:
-        st.error(f"Login failed: {e}")
+        st.error(f"Login failed❌: {e}")
 
 def sign_out(): 
     try:
@@ -40,12 +40,12 @@ def auth_screen():
     st.title("🔐 LYROS Checking and Checkout")
     option = st.selectbox("Choose an action:", ["Login", "Sign Up"])
     email = st.text_input("Email")
-    password = st.text_input("Password", type="password")
+    password = st.text_input("Password", type='password')
 
     if option == "Sign Up" and st.button("Register"):
         user = sign_up(email, password)
         if user and user.user:
-            st.success("Registration successful. Please log in.")
+            st.success("Registration successful👍. Please log in.")
 
     if option == "Login" and st.button("Login"):
         user = sign_in(email, password)
